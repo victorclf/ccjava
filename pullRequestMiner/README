@@ -1,0 +1,16 @@
+*************
+*** What? ***
+*************
+Tool for extracting pull requests from GitHub. Downloads all open pull requests of the specified projects.
+
+********************
+*** Dependencies ***
+********************
+- PyGithub: https://github.com/PyGithub/PyGithub
+
+*************
+*** Usage ***
+*************
+Run pullRequestMiner.py with -h to see what options are available.
+
+

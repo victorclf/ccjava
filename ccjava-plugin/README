@@ -1,0 +1,46 @@
+********************
+*** Dependencies ***
+********************
+- Eclipse Luna SR2 (4.4.2)
+
+*************
+*** Setup ***
+*************
+1. Install Eclipse IDE for Java Developers 4.4.2
+2. Install Eclipse for RCP developers in the same folder (replace all files)
+3. Import ccjava-plugin project on Eclipse
+4. Right-click on META-INF/MANIFEST.MF and 'Update classpath'.
+5. Right-click MANIFEST.MF -> Run As -> Eclipse Application
+6. To configure the app run configuration, on the top bar, select
+	Run -> Run Configurations -> ccjava-plugin.application
+	-> Arguments -> Working Directory -> Choose the root project folder
+	-> Apply
+7 Also on the Arguments tab, add the folder containing the source files
+	to be analyzed in Program Arguments after "-consoleLog". For example:
+	"... -consoleLog test/examples/toy_example"
+8. To configure the test run configuration, right click the test/ccjava
+	folder and run it as JUnit Plug-in Test
+
+**********************
+*** Build (Export) ***
+**********************
+1. In Eclipse, open ccjava.product
+2. Click on "Eclipse Product export wizard"
+3. Choose the destination directory
+4. Finish
+
+
+******************
+*** CSV Output ***
+******************
+
+- defs.csv (Definition ID, Source file, Character span, Name,
+	Is type definition?, Is method definition?, Is inside a diff-region?)
+- uses.csv (Use ID, Source file, Character span, Name, Associated definition)
+- diffs.csv (Diff-region ID, Source file, Line span, Character span)
+- diffRelations.csv (Relation ID, Relation type, Diff-region 1, Diff-region 2)
+- partitions.csv (Partition ID, Is partition trivial?, A diff region that is
+	part of the partition, Method enclosing the diff-region)
+- summary.csv (Number of source files, Number of definitions, Number of uses, 
+	Number of diff-regions, Number of partitions, Number of non-trivial partitions, 
+	Number of trivial partitions)

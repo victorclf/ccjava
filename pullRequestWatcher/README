@@ -1,0 +1,41 @@
+*************
+*** What? ***
+*************
+Watches projects listed in projectList.conf for new pull requests that meet certain criteria.
+
+********************
+*** Dependencies ***
+********************
+- PyGithub: https://github.com/PyGithub/PyGithub
+- sopel: https://pypi.python.org/pypi/sopel
+- filelock: https://pypi.python.org/pypi/filelock/
+- requests
+- aria2c: aptitude install aria2
+
+**********************************************
+*** Setup module to check for online users ***
+**********************************************
+1. Replace ~/.sopel/default.cfg with default.cfg.template and fill in the variables in brackets
+2. Add list of channels to join to sopelThrottleJoin.py
+3. ln -s $(pwd)/pullAuthorWhois.py ~/.sopel/modules/pullAuthorWhois.py 
+4. ln -s $(pwd)/sopelThrottleJoin.py ~/.sopel/modules/sopelThrottleJoin.py
+5. Run sopel as daemon: sopel -d 1>sopel-out.log 2>sopel-err.log
+
+*************
+*** Usage ***
+*************
+Set a CRON job to periodically execute pullRequestWatcher.py. For example:
+1. Run crontab -e
+2. Add line: */60 * * * *  <path_to_pullRequestWatcher.py>
+
+To share HTML results on the network, you can do:
+nohup python -m SimpleHTTPServer 8001 1>/tmp/simplehttpserver-out.log 2>/tmp/simplehttpserver-err.log &
+
+Use argument -gha to examine pull requests from all Java projects in GitHub
+
+
+
+
+
+
+

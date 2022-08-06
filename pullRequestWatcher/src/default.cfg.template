@@ -1,0 +1,12 @@
+[core]
+nick = <watcher_nick>
+user = <watcher_nick>
+host = chat.freenode.net
+auth_method=server
+auth_password=<nickserv_password>
+use_ssl = true
+port = 6697
+owner = victorclf
+channels = <one_of_the_channels_to_join>
+throttle_join=1
+enable=pullAuthorWhois,sopelThrottleJoin

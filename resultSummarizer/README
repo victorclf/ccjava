@@ -1,0 +1,10 @@
+*************
+*** What? ***
+*************
+
+Runs JClusterChanges on multiple pull requests that have been previously downloaded by a tool like pullRequestMiner. Then, summarizes all the data from those pull requests in a few .csv files.
+
+*************
+*** Usage ***
+*************
+Run resultSummarizer.py with -h to see what options are available.
